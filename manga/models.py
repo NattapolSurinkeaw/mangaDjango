@@ -13,7 +13,7 @@ class Category(models.Model):
 class Cartoon(models.Model):
     cate_id = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="cartoons")
     name_cartoon = models.CharField(max_length=255)
-    thumbnail = models.ImageField(upload_to='upload/thumbnails/', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='thumbnails', blank=True)
     priority = models.IntegerField()
     date = models.DateField(auto_now_add=True)
 
