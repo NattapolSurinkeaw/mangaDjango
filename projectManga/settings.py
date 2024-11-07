@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'manga.context_processors.categories'
             ],
         },
     },
@@ -118,8 +119,8 @@ USE_TZ = True
 import os
 
 STATIC_URL = 'static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'upload/')
 STATICFILES_DIRS = [BASE_DIR / 'static',]
 
 # Default primary key field type

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="overflow-hidden">
+    <nav class="w-50 mx-auto my-4 bg-secondary p-1 rounded">
+        <h3>เรื่อง :  / ตอนที่ : </h3>
+    </nav>
+    <div>
+        {% for image in images %}
+        <img class="rounded-1 w-100" style="height: 100%;" src="{{ image.image_link.url }}" alt="{{ image.title_image }}">
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

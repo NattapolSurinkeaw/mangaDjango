@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<div class="overflow-hidden">
+    <nav class="w-50 mx-auto my-4 bg-secondary p-1 rounded">
+        <h3>เรื่อง : </h3>
+    </nav>
+    <ul>
+        {% for episode in episodes %}
+        <a href="/ep/{{episode.id}}">
+            <li>{{episode.name_episode}}</li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
