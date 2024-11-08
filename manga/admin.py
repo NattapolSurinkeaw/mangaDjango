@@ -7,7 +7,14 @@ admin.site.register(Category)
 
 admin.site.register(Cartoon)
 
-admin.site.register(Episode)
+class EpisodeCartoonAdmin(admin.ModelAdmin):
+    list_display = ('get_cartoon_name', 'name_episode')
+
+    def get_cartoon_name(self, obj):
+        return obj.cartoon_id.name_cartoon
+    get_cartoon_name.short_description = 'Cartoon'
+
+admin.site.register(Episode, EpisodeCartoonAdmin)
 
 class ImageCartoonAdmin(admin.ModelAdmin):
     list_display = ('get_cartoon_name', 'title_image', 'episode_id', 'priority', 'date')

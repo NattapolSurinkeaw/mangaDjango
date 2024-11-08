@@ -12,6 +12,10 @@ def filterByCate(request, cate):
     category = get_object_or_404(Category, cate_name = cate)
     cartoons = Cartoon.objects.filter(cate_id = category.id)
     return render(request,'index.html', {'cartoons': cartoons})
+
+def filterByName(request, name): 
+    cartoons = Cartoon.objects.filter(name_cartoon = name)
+    return render(request,'index.html', {'cartoons': cartoons})
  
 
 def manga(request):
